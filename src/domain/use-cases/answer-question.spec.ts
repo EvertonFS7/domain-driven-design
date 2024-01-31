@@ -2,14 +2,14 @@ import { AnswerQuestionUseCase } from './answer-question'
 import { AnswersRepository } from '../repositories/answers-repository'
 import { Answer } from '../entities/answer'
 
-const fakeAnswersRepsoitory: AnswersRepository = {
+const fakeAnswersRepository: AnswersRepository = {
     create: async (answer: Answer) => {
         return
     }
 }
 
 test('create an answer', async () => {
-    const answerQuestion = new AnswerQuestionUseCase(fakeAnswersRepsoitory)
+    const answerQuestion = new AnswerQuestionUseCase(fakeAnswersRepository)
 
     const aswer = await answerQuestion.execute({
         questionId: '1',
